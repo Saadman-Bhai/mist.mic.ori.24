@@ -9,8 +9,7 @@
     --silver: #C0C0C0;
     --nav-bg: rgba(208, 218, 255, 0.8);
     --timeline-bg: linear-gradient(-8deg, rgba(3, 0, 20, 0.05), rgba(4, 105, 255, 0.05), rgba(112, 0, 255, 0.05));
-    --gradient: linear-gradient(135deg, #3a0ca3, #4361ee, #4cc9f0);
-    --date-gradient: linear-gradient(135deg, #3a0ca3, #4361ee, #4cc9f0);
+    --gradient: linear-gradient(64deg, #B5B2FF, #6889FF, #7000FF);
 }
 
 /* Base styles and simple reset for consistency */
@@ -57,29 +56,11 @@ body {
     white-space: nowrap;
     background: var(--nav-bg);
     backdrop-filter: blur(10px);
-    /* Border with Date color code */
-    border: 2px solid transparent;
-    background-clip: padding-box;
-    position: relative;
-}
-
-.nav-item::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    margin: -2px;
-    border-radius: inherit;
-    background: var(--date-gradient);
 }
 
 .nav-item:hover {
     transform: translateY(-3px);
-    background: var(--date-gradient);
-    color: white;
+    background: rgba(255, 255, 255, 0.3);
 }
 
 /* Hero Section */
@@ -106,32 +87,21 @@ body {
 
 /* MIC Logo */
 .mic-logo {
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 70%;
+    border-radius: 50%;
     overflow: hidden;
-    position: absolute;
-    top: 10%;
-    right: 55%;
-    transform: translateX(55%);
+    box-shadow: 0 0 50px rgba(112, 0, 255, 0.5);
 }
 
 .mic-logo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.hero-content {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 350px; /* Space for the logo */
 }
 
 .hero-title {
@@ -224,17 +194,17 @@ section {
 
 /* Updated Card Styles with Gradient Border */
 .card {
-    position: relative;
-    border-radius: 25px;
-    padding: 40px;
-    background: #0a0a1a;
-    font-family: sans-serif;
-    text-align: center;
-    font-size: 18px;
-    max-width: 500px;
-    line-height: 1.6;
-    transition: transform 0.3s ease;
     flex: 1 1 300px;
+    border-radius: 50px;
+    padding: 40px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    position: relative;
+    background: rgba(10, 10, 26, 0.7);
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 500px;
 }
 
 .card::before {
@@ -260,10 +230,7 @@ section {
     width: 50px;
     height: 50px;
     margin-bottom: 20px;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--light);
 }
 
 .card-title {
@@ -272,10 +239,11 @@ section {
     line-height: 55px;
     font-weight: 600;
     margin-bottom: 15px;
-    background: var(--gradient);
+    background: linear-gradient(135deg, #3a0ca3, #4361ee, #4cc9f0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    color: transparent;
 }
 
 .card-content {
@@ -310,13 +278,13 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 25px;
+    border-radius: 50px;
     padding: 20px 30px;
     margin-bottom: 25px;
     position: relative;
     z-index: 1;
     transition: transform 0.3s ease;
-    background: #0a0a1a;
+    background: var(--timeline-bg);
 }
 
 .timeline-item::before {
@@ -325,7 +293,7 @@ section {
     inset: 0;
     padding: 2px;
     border-radius: inherit;
-    background: linear-gradient(135deg, #3a0ca3, #4361ee, #4cc9f0);
+    background: linear-gradient(-16deg, rgba(0, 0, 0, 0.7), rgba(112, 0, 255, 1), rgba(4, 105, 255, 0.71));
     -webkit-mask: 
         linear-gradient(#fff 0 0) content-box, 
         linear-gradient(#fff 0 0);
@@ -367,15 +335,15 @@ section {
 
 /* Updated Event Card Styles with Gradient Border */
 .event-card {
-    position: relative;
-    border-radius: 25px;
+    border-radius: 50px;
     padding: 40px;
-    background: #0a0a1a;
-    font-family: sans-serif;
+    transition: transform 0.3s ease;
+    position: relative;
+    background: rgba(10, 10, 26, 0.7);
     text-align: center;
+    font-family: 'Inter', sans-serif;
     font-size: 18px;
     line-height: 1.6;
-    transition: transform 0.3s ease;
 }
 
 .event-card::before {
@@ -384,7 +352,7 @@ section {
     inset: 0;
     padding: 2px;
     border-radius: inherit;
-    background: linear-gradient(135deg, #3a0ca3, #4361ee, #4cc9f0);
+    background: linear-gradient(-54deg, rgba(3, 0, 20, 0.05), rgba(4, 105, 255, 0.05), rgba(112, 0, 255, 0.05));
     -webkit-mask: 
         linear-gradient(#fff 0 0) content-box, 
         linear-gradient(#fff 0 0);
@@ -403,10 +371,11 @@ section {
     line-height: 55px;
     font-weight: 600;
     margin-bottom: 15px;
-    background: var(--gradient);
+    background: linear-gradient(135deg, #3a0ca3, #4361ee, #4cc9f0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    color: transparent;
 }
 
 .event-desc {
@@ -467,32 +436,13 @@ section {
     line-height: 22px;
     margin-bottom: 30px;
     color: var(--text);
-    position: relative;
-    padding: 20px;
-    border-radius: 16px;
-    background: #0a0a1a;
-}
-
-.about-text::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    padding: 2px;
-    border-radius: inherit;
-    background: linear-gradient(135deg, #3a0ca3, #4361ee, #4cc9f0);
-    -webkit-mask: 
-        linear-gradient(#fff 0 0) content-box, 
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
 }
 
 /* Footer - Updated to match main page background */
 footer {
     text-align: center;
     padding: 90px 10%;
-    background: var(--dark);
+    background: linear-gradient(-90deg, rgba(177, 209, 255, 1), rgba(104, 137, 255, 1));
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -518,7 +468,7 @@ footer {
     border: 2px solid var(--primary);
     color: var(--dark);
     margin-bottom: 2rem;
-    background: var(--gradient);
+    background: linear-gradient(-82deg, rgba(112, 0, 255, 1), rgba(104, 137, 255, 0.5));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -529,7 +479,7 @@ footer {
 
 .solid-star-icon {
     font-size: 2rem;
-    color: var(--text);
+    color: var(--dark);
     margin-bottom: 2rem;
     line-height: 1;
 }
@@ -544,10 +494,7 @@ footer {
     align-items: center;
     justify-content: center;
     gap: 12px;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--dark);
 }
 
 .footer-text {
@@ -555,7 +502,7 @@ footer {
     font-size: 28px;
     font-weight: 500;
     line-height: 34px;
-    color: var(--text);
+    color: var(--dark);
     margin-bottom: 30px;
     max-width: 700px;
     margin-left: auto;
@@ -564,19 +511,6 @@ footer {
 
 /* Mobile specific styles - FIXED LAYOUT ISSUES */
 @media (max-width: 1024px) {
-    .mic-logo {
-        position: relative;
-        right: auto;
-        transform: none;
-        margin: 0 auto 2rem;
-        top: auto;
-    }
-    
-    .hero-content {
-        margin-top: 0;
-        width: 100%;
-    }
-    
     .navbar {
         gap: 30px;
     }
@@ -585,9 +519,7 @@ footer {
 @media (max-width: 768px) {
     .navbar {
         padding: 1rem;
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
+        gap: 20px;
     }
 
     .nav-item {
@@ -771,4 +703,3 @@ footer {
         padding: 12px 15px;
     }
 }
-
