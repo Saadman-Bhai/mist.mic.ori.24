@@ -106,15 +106,15 @@ body {
 
 /* MIC Logo */
 .mic-logo {
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     overflow: hidden;
     position: absolute;
-    top: 5%;
+    top: 20%;
     right: 48%;
     transform: translateX(50%);
 }
@@ -562,7 +562,7 @@ footer {
     margin-right: auto;
 }
 
-/* Mobile specific styles */
+/* Mobile specific styles - FIXED LAYOUT ISSUES */
 @media (max-width: 1024px) {
     .mic-logo {
         position: relative;
@@ -587,6 +587,7 @@ footer {
         padding: 1rem;
         gap: 15px;
         flex-wrap: wrap;
+        justify-content: center;
     }
 
     .nav-item {
@@ -597,11 +598,15 @@ footer {
     .mic-logo {
         width: 200px;
         height: 200px;
+        position: relative;
+        margin: 0 auto 2rem;
     }
 
     .hero-title {
         font-size: 40px;
         line-height: 50px;
+        text-align: center;
+        padding: 0 10px;
     }
     
     .hero-title span {
@@ -611,25 +616,31 @@ footer {
     .hero-tagline {
         font-size: 24px;
         line-height: 30px;
+        text-align: center;
+        padding: 0 15px;
     }
 
     section {
         padding: 50px 5%;
+        text-align: center;
     }
 
     .section-title {
         font-size: 40px;
         line-height: 50px;
+        padding: 0 10px;
     }
     
     .section-subtitle {
         font-size: 20px;
         line-height: 26px;
+        padding: 0 15px;
     }
 
     .card-row {
         flex-direction: column;
         gap: 20px;
+        align-items: center;
     }
 
     .card-title {
@@ -645,10 +656,12 @@ footer {
     .events-row {
         flex-direction: column;
         gap: 20px;
+        align-items: center;
     }
 
     .event-card {
         flex: 1 1 100%;
+        width: 100%;
     }
     
     .event-title {
@@ -662,36 +675,99 @@ footer {
     }
 
     .timeline-container {
-        padding-left: 20px;
+        padding: 0 10px;
     }
 
     .timeline-item {
         flex-direction: column;
         align-items: flex-start;
         padding: 15px 20px;
+        text-align: left;
     }
 
     .timeline-time {
         margin-top: 10px;
+        align-self: flex-end;
     }
 
     .events-grid {
         display: flex;
         flex-direction: column;
         gap: 20px;
+        align-items: center;
     }
     
     .footer-title {
         font-size: 32px;
         line-height: 40px;
+        text-align: center;
+        padding: 0 15px;
     }
     
     .footer-text {
         font-size: 20px;
         line-height: 26px;
+        text-align: center;
+        padding: 0 15px;
     }
     
     .about-text {
         padding: 15px;
+        text-align: center;
+    }
+    
+    /* Fix for content shifting to the left */
+    body, html {
+        width: 100%;
+        overflow-x: hidden;
+    }
+    
+    #hero, section, footer {
+        width: 100%;
+        margin: 0;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    
+    .hero-content, .info-container, .timeline-container, .events-row, .events-grid, .about-content {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0;
+    }
+}
+
+/* Additional fix for very small screens */
+@media (max-width: 480px) {
+    .navbar {
+        gap: 10px;
+    }
+    
+    .nav-item {
+        font-size: 12px;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .hero-title {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    
+    .hero-tagline {
+        font-size: 20px;
+        line-height: 26px;
+    }
+    
+    .section-title {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    
+    .card {
+        padding: 25px;
+    }
+    
+    .timeline-item {
+        padding: 12px 15px;
     }
 }
